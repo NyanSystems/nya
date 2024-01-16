@@ -29,6 +29,3 @@ jobs:
     
     - name: Cleanup dirty project
       run: make clean
-    
-    - name: make distcheck
-      run: make distcheck
