@@ -1,0 +1,34 @@
+name: GNU/Make CI
+
+on:
+  push:
+      branches: [ main ]
+  pull_request:
+      branches: [ main ]
+    
+jobs:
+  make-build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Create necessary folders
+      run: |
+        mkdir -p build/helpers
+
+    - name: Initialize and Build project
+      run: make
+    
+    - name: Cleanup dirty project
+      run: make clean
+    
+    - name: make distcheck
+      run: make distcheck
