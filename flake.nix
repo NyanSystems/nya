@@ -45,7 +45,7 @@
         cmake
         cmakeCurses
         llvmPackages.llvm
-        llvmPackagses.clang
+        llvmPackages.clang
         ## GNU utilitalari
         gcc
         # gdb
