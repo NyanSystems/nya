@@ -26,7 +26,7 @@ llvmPackages.stdenv.mkDerivation rec {
     licencse = licenses.mit;
     platforms = with platforms; linux ++ darwin;
 
-    # Bu yerga faqat "Silent Carnage TCL" dasturchilar qo'shilishi mumkin
+    # Bu yerga faqat "Silent Carnage LTC" dasturchilar qo'shilishi mumkin
     maintainers = [
       {
         name = "Sokhibjon Orzikulov";
