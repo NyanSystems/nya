@@ -48,6 +48,16 @@ llvmPackages.stdenv.mkDerivation rec {
           fingerprint = "6CF0 B081 B4C5 7414 BD7A  09D5 464C A2FF 1D27 D92C";
         }];
       }
+      {
+        name = "Otabek Ismoilov";
+        email = "ismoilovdevarchlinux@gmail.com";
+        handle = "ismoilovdevml";
+        github = "ismoilovdevml";
+        githubId = 107093598;
+        keys = [{
+          fingerprint = "2D72 2B1E AEAB 1E28 13F2 A7BA 121E 8D15 C054 757B";
+        }];
+      }
     ];
   };
 }
