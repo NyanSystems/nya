@@ -5,11 +5,11 @@
 <h2 align="center">Nya</h2>
 
 <div align="center">
-    <a href="https://www    .archlinux.org">
-        <img src="https://img.shields.io/static/v1.svg?style=rounded-square&label=OS&message=Arch%20Linux&logo=arch-linux&logoColor=311ac5&colorA=ead186&colorB=fe77ff"/>
+    <a href="https://github.com/orgs/NyanSystems/repositories">
+        <img src="https://img.shields.io/static/v1.svg?style=rounded-square&label=Type&message=Language&logo=4chan&logoColor=311ac5&colorA=ead186&colorB=fe77ff"/>
     </a> 
-    <a href="https://www.archlinux.org">
-        <img src="https://img.shields.io/static/v1.svg?style=rounded-square&label=OS&message=macOS&logo=apple&logoColor=311ac5&colorA=ead186&colorB=fe77ff"/>
+    <a href="https://github.com/NyanSystems/nya/blob/main/flake.nix">
+        <img src="https://img.shields.io/static/v1.svg?style=rounded-square&label=Target&message=*NIX&logo=nixos&logoColor=311ac5&colorA=ead186&colorB=fe77ff"/>
     </a>
 </div>
 
