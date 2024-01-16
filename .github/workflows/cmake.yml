@@ -69,35 +69,3 @@ jobs:
       # Execute tests defined by the CMake configuration. Note that --build-config is needed because the default Windows generator is a multi-config generator (Visual Studio generator).
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest --build-config ${{ matrix.build_type }}
-
-
-  nix-build:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      fail-fast: false
-
-      matrix:
-        os: [ubuntu-latest, macos-latest]
-
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        fetch-depth: 1
-
-    # Setup Nix
-    - uses: cachix/install-nix-action@v13
-      with:
-        nix_path: nixpkgs=channel:nixpkgs-unstable
-
-    # Build the project using Nix
-    - name: Build
-      run: nix-build
-
-    # Install the project (if there is an install script or make target)
-    - name: Install
-      run: nix-env -i -f default.nix
-
-    # Run the project (replace './result/bin/myapp' with your binary path)
-    - name: Run
-      run: ./result/bin/nya
