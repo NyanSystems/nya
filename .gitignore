@@ -50,4 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-cmake-build-debug/
+
+# Build files
+build/*
+
+# Test files directory
+test/*
+!test/*.c
