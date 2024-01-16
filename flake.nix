@@ -39,25 +39,24 @@
       name = "nya";
 
       packages = with pkgs; [
-        # Asbob uskunalar
-        ## LLVM
+        # Asbob-uskunalar
+        ## LLVM utilitalari
         lldb
         cmake
         cmakeCurses
         llvmPackages.llvm
         llvmPackagses.clang
-        ## GNU
+        ## GNU utilitalari
         gcc
         # gdb
         gnumake
         # valgrind
         
-        # Ustida ishlayotganda ishlatilgan kutubxonalar
+        # Ustida ishlayotgandagi ishlatilgan kutubxonalar
 
         # Build va rantaym paytgi kutubxonalar
         curl  # Tarmoq bilan ishlash uchun
         jansson  # JSON bilan ishlash uchun
-
       ];
 
       # Terminaldagi muhitni ishlash uchun kerakli qismlar sozlash.
