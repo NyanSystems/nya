@@ -10,3 +10,5 @@ file(GLOB nyan_SRC CONFIGURE_DEPENDS "includes/*.h" "src/*.c" "helpers/*.c" "hel
 add_executable(nya ${nyan_SRC})
 
 set(CMAKE_BUILD_TYPE Debug)
+
+install(TARGETS nya DESTINATION bin)

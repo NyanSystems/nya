@@ -8,8 +8,9 @@
     # narsalar ishlatish niyatida bo'lsangiz.
     #
     # Masalan, agar o'zingizni suetolog his qilsangiz...
-    # nixpkgs.url = "github:NixOS/nixpkgs/unstable";
-    nixpkgs.url = "github:NixOS/nixpkgs/23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    # Agar mental sog' bo'lsangiz...
+    # nixpkgs.url = "github:NixOS/nixpkgs/23.11";
 
     # Xar hil flake bilan ishlashga utilitalar
     utils.url = "github:numtide/flake-utils";
@@ -38,21 +39,28 @@
       name = "nya";
 
       packages = with pkgs; [
-        # Development Tools
-        llvmPackages_14.clang
+        # Asbob uskunalar
+        ## LLVM
+        lldb
         cmake
         cmakeCurses
+        llvmPackages.llvm
+        llvmPackagses.clang
+        ## GNU
+        gcc
+        # gdb
+        gnumake
+        # valgrind
+        
+        # Ustida ishlayotganda ishlatilgan kutubxonalar
 
-        # Development time dependencies
-        gtest
+        # Build va rantaym paytgi kutubxonalar
+        curl  # Tarmoq bilan ishlash uchun
+        jansson  # JSON bilan ishlash uchun
 
-        # Build time and Run time dependencies
-        spdlog
-        abseil-cpp
       ];
 
-      # Setting up the environment variables you need during
-      # development.
+      # Terminaldagi muhitni ishlash uchun kerakli qismlar sozlash.
       shellHook = let
         icon = "f121";
       in ''
