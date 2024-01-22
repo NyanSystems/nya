@@ -14,6 +14,7 @@ pkgs.mkShell rec {
     ## LLVM utilitalari
     lldb
     cmake
+    clang-tools
     cmakeCurses
     llvmPackages.llvm
     llvmPackages.clang
