@@ -19,7 +19,7 @@ jobs:
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Enter dev shell
-      run: nix-shell --run "true"
+      run: nix develop
     
     - name: Apply clang-format
       run: /usr/bin/find . \( -iname *.c -o -iname *.h \) -exec clang-format -i {} \;
