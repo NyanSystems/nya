@@ -4,10 +4,10 @@
 
 /**
  * @file vector.h
- * 
+ *
  * @brief A vector implementation in C
  * @brief C da vektor implementatsiyasi
- * 
+ *
  * @author Sokhibjon Orzikulov
  * @license MIT
  */
@@ -46,7 +46,7 @@ struct vector {
    * Data pointer bu ushbu vektorning egallagan ma'lumotlarning manzili
    */
   void *data;
-  
+
   /**
    * The pointer index is the index that will be read next upon calling
    * "vector_peek". This index will then be incremented. Pointer indeksi
@@ -59,7 +59,7 @@ struct vector {
   int count;
   int flags;
   size_t esize;
-  
+
   /**
    * Vector of struct vector, holds saves of this vector. YOu can save the
    * internal state at all times with vector_save Data is not restored and is
@@ -72,10 +72,10 @@ struct vector {
 /**
  * Creates a new vector with the given element size
  * Berilgan element hajmi bilan yangi vektor yaratadi
- * 
+ *
  * \param esize The element size of the vector
  * \return Returns a new vector
- * 
+ *
  * \param esize Vektor element hajmi
  * \return Yangi vektor qaytaradi
  */
@@ -84,9 +84,9 @@ struct vector *vector_create(size_t esize);
 /**
  * Frees the vector
  * Vektorni bo'shatadi
- * 
+ *
  * \param vector The vector to free
- * 
+ *
  * \param vector Bo'shatish uchun vektor
  */
 void vector_free(struct vector *vector);
@@ -94,11 +94,11 @@ void vector_free(struct vector *vector);
 /**
  * Returns the element at the given index
  * Berilgan indeksdagi elementni qaytaradi
- * 
+ *
  * \param vector The vector to get the element of
  * \param index The index to get the element at
  * \return Returns the element at the given index
- * 
+ *
  * \param vector Elementni olish uchun vektor
  * \param index Elementni olish uchun indeks
  * \return Berilgan indeksdagi elementni qaytaradi
@@ -108,11 +108,11 @@ void *vector_at(struct vector *vector, int index);
 /**
  * Returns the peek element at the given index
  * Berilgan indeksdagi peek elementni qaytaradi
- * 
+ *
  * \param vector The vector to get the element of
  * \param index The index to get the element at
  * \return Returns the element at the given index
- * 
+ *
  * \param vector Elementni olish uchun vektor
  * \param index Elementni olish uchun indeks
  * \return Berilgan indeksdagi elementni qaytaradi
@@ -120,8 +120,8 @@ void *vector_at(struct vector *vector, int index);
 void *vector_peek_ptr_at(struct vector *vector, int index);
 
 /**
- * Returns 
-*/
+ * Returns
+ */
 void *vector_peek_no_increment(struct vector *vector);
 void *vector_peek(struct vector *vector);
 void *vector_peek_at(struct vector *vector, int index);
@@ -131,9 +131,9 @@ void vector_unset_flag(struct vector *vector, int flag);
 /**
  * Pops off the last peeked element
  * Oxirgi peek qilingan elementni olib tashlaydi
- * 
+ *
  * \param vector The vector to pop the last peeked element off of
- * 
+ *
  * \param vector Oxirgi peek qilingan elementni olib tashlash uchun vektor
  */
 void vector_pop_last_peek(struct vector *vector);
@@ -143,9 +143,9 @@ void vector_pop_last_peek(struct vector *vector);
  * Use this function instead of vector_peek if this is a vector of pointers
  * Pointerlarni o'qib, o'zini qaytaradi. Agar bu pointerlar vektori bo'lsa,
  * Ushbu funksiyadan vector_peek foydalaning
- * 
+ *
  * \param vector The vector to peek into
- * 
+ *
  * \param vector Peek qilish uchun vektor
  */
 void *vector_peek_ptr(struct vector *vector);
@@ -155,10 +155,10 @@ void *vector_peek_ptr(struct vector *vector);
  * Use this function instead of vector_peek if this is a vector of pointers
  * Pointerlarni o'qib, o'zini qaytaradi. Agar bu pointerlar vektori bo'lsa,
  * Ushbu funksiyadan vector_peek foydalaning
- * 
+ *
  * \param vector The vector to peek into
  * \param index The index to peek at
- * 
+ *
  * \param vector Peek qilish uchun vektor
  * \param index Peek qilish uchun indeks
  */
@@ -166,34 +166,35 @@ void vector_set_peek_pointer(struct vector *vector, int index);
 
 /**
  * Peeks into the vector of pointers, returning the last pointer value its self
- * Vektorning pointerlariga peek qilib, oxirgi pointer qiymatini o'zini qaytaradi
- * 
+ * Vektorning pointerlariga peek qilib, oxirgi pointer qiymatini o'zini
+ * qaytaradi
+ *
  * \param vector The vector to peek into
- * 
+ *
  * \param vector Peek qilish uchun vektor
  */
 void vector_set_peek_pointer_end(struct vector *vector);
 
 /**
-  * Pushes the given value to the vector
-  * Berilgan qiymatni vektorga qo'shadi
-  * 
-  * \param vector The vector to push the value to
-  * \param elem The value to push to the vector
-  * 
-  * \param vector Qiymatni qo'shish uchun vektor
-  * \param elem Vektorga qo'shish uchun qiymat
-  */
+ * Pushes the given value to the vector
+ * Berilgan qiymatni vektorga qo'shadi
+ *
+ * \param vector The vector to push the value to
+ * \param elem The value to push to the vector
+ *
+ * \param vector Qiymatni qo'shish uchun vektor
+ * \param elem Vektorga qo'shish uchun qiymat
+ */
 void vector_push(struct vector *vector, void *elem);
 
 /**
  * Pushes the given value to the vector at the given index
- * Berilgan qiymatni vektorga berilgan indeksda qo'shadi 
- * 
+ * Berilgan qiymatni vektorga berilgan indeksda qo'shadi
+ *
  * \param vector The vector to push the value to
  * \param index The index to push the value at
  * \param ptr The value to push to the vector
- * 
+ *
  * \param vector Qiymatni qo'shish uchun vektor
  * \param index Qiymatni qo'shish uchun indeks
  * \param ptr Vektorga qo'shish uchun qiymat
@@ -203,9 +204,9 @@ void vector_push_at(struct vector *vector, int index, void *ptr);
 /**
  * Pop the given value from the vector
  * Vektordan berilgan qiymatni olib tashlaydi
- * 
+ *
  * \param vector The vector to pop the value from
- * 
+ *
  * \param vector Qiymatni olib tashlash uchun vektor
  */
 void vector_pop(struct vector *vector);
@@ -213,9 +214,9 @@ void vector_pop(struct vector *vector);
 /**
  * Pops the last element off the vector
  * Vektordan oxirgi elementni olib tashlaydi
- * 
+ *
  * \param vector The vector to pop the last element off of
- * 
+ *
  * \param vector Oxirgi elementni olib tashlash uchun vektor
  */
 void vector_peek_pop(struct vector *vector);
@@ -223,9 +224,9 @@ void vector_peek_pop(struct vector *vector);
 /**
  * Returns the back pointer of the vector
  * Vektorning orqa pointerini qaytaradi
- * 
+ *
  * \param vector The vector to get the back pointer of
- * 
+ *
  * \param vector Orqa pointerini olish uchun vektor
  */
 void *vector_back(struct vector *vector);
@@ -233,9 +234,9 @@ void *vector_back(struct vector *vector);
 /**
  * Returns the back pointer of the vector or null if the vector is empty
  * Vektorning orqa pointerini qaytaradi yoki vektor bo'sh bo'lsa null
- * 
+ *
  * \param vector The vector to get the back pointer of
- * 
+ *
  * \param vector Orqa pointerini olish uchun vektor
  */
 void *vector_back_or_null(struct vector *vector);
@@ -243,9 +244,9 @@ void *vector_back_or_null(struct vector *vector);
 /**
  * Returns the back pointer of the vector
  * Vektorning orqa pointerini qaytaradi
- * 
+ *
  * \param vector The vector to get the back pointer of
- * 
+ *
  * \param vector Orqa pointerini olish uchun vektor
  */
 void *vector_back_ptr(struct vector *vector);
@@ -253,9 +254,9 @@ void *vector_back_ptr(struct vector *vector);
 /**
  * Returns the back pointer of the vector or null if the vector is empty
  * Vektorning orqa pointerini qaytaradi yoki vektor bo'sh bo'lsa null
- * 
+ *
  * \param vector The vector to get the back pointer of
- * 
+ *
  * \param vector Orqa pointerini olish uchun vektor
  */
 void *vector_back_ptr_or_null(struct vector *vector);

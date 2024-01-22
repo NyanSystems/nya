@@ -4,10 +4,10 @@
 
 /**
  * @file buffer.h
- * 
+ *
  * @brief Buffer implementation in C
  * @brief C da buffer implementatsiyasi
- * 
+ *
  * @author Sokhibjon Orzikulov
  * @license MIT
  */

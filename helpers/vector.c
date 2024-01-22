@@ -4,10 +4,10 @@
 
 /**
  * @file vector.h
- * 
+ *
  * @brief A vector implementation in C
  * @brief C da vektor implementatsiyasi
- * 
+ *
  * @author Sokhibjon Orzikulov
  * @license MIT
  */

@@ -28,6 +28,6 @@ jobs:
       run: |
         git diff
         if ! git diff --exit-code; then
-          echo "Code format differences found."
+          echo "Code format differences found. Please run clang-format to format the codebase."
           exit 1
         fi
