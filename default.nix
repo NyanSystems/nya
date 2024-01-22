@@ -21,7 +21,7 @@ llvmPackages.stdenv.mkDerivation rec {
   meta = with lib; {
     homepage = "https://github.com/NyanSystems/nya";
     description = ''
-      NyanSystems tomonidan C da  yozilgan kompilyator.";
+      NyanSystems tomonidan C da yozilgan kompilyator.";
     '';
     licencse = licenses.mit;
     platforms = with platforms; linux ++ darwin;
