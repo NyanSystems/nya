@@ -18,11 +18,8 @@ jobs:
         nix_path: nixpkgs=channel:nixpkgs-unstable
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Get latest updates
-      run: nix-channel --update
-
-    - name: Install clang-format
-      run: nix-env -iA nixpkgs.clang-tools 
+    - name: Enter dev shell
+      run: nix-shell --run "true"
     
     - name: Apply clang-format
       run: /usr/bin/find . \( -iname *.c -o -iname *.h \) -exec clang-format -i {} \;
