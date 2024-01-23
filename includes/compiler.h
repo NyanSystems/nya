@@ -27,4 +27,4 @@ struct compile_process *compile_process_create(const char *filename,
                                                const char *filename_out,
                                                int flags);
 
-#endif // NYA_CPROCESS_H
+#endif // NYA_COMPILER_H
