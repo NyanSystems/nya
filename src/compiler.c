@@ -2,7 +2,7 @@
 // Created by Sokhibjon Orzikulov on 15/01/24.
 //
 
-#include "../includes/compiler.h"
+#include "../include/compiler.h"
 
 int compile_file(const char *filename, const char *out_filename, int flags)
 {

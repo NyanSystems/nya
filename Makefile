@@ -1,5 +1,5 @@
 OBJECTS= ./build/compiler.o ./build/cprocess.o ./build/helpers/buffer.o ./build/helpers/vector.o
-INCLUDES= -I./includes -I./helpers
+INCLUDES= -I./include -I./helpers
 
 all: ${OBJECTS}
 	gcc src/main.c ${INCLUDES} ${OBJECTS} -g -o ./build/nyagcc
