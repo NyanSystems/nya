@@ -37,6 +37,4 @@ jobs:
 
     - name: Remote run
       run: |
-        mkdir test
-        touch test/simple.c
         nix run github:NyanSystems/nya
