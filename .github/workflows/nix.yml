@@ -36,4 +36,7 @@ jobs:
       run: ./result/bin/nya
 
     - name: Remote run
-      run: nix run github:NyanSystems/nya
+      run: |
+        mkdir test
+        touch test/simple.c
+        nix run github:NyanSystems/nya
