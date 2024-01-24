@@ -34,3 +34,6 @@ jobs:
       
     - name: Run
       run: ./result/bin/nya
+
+    - name: Remote run
+      run: nix run github:NyanSystems/nya
