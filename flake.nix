@@ -16,7 +16,7 @@
     utils.url = "github:numtide/flake-utils";
   };
 
-    outputs = { self, nixpkgs, ... }@inputs: inputs.utils.lib.eachSystem [
+  outputs = { self, nixpkgs, ... }@inputs: inputs.utils.lib.eachSystem [
     # O'zingiz qo'llab quvvatlash xohlagan arxitekturalar shu yerga qo'shing.
     # Esda tuting: Hamma paketlarniyam stabil va rasmiy nixpkgs har xil
     # arxitekturalarda qo'llab quvvatlamaydi.
