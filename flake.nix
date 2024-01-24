@@ -14,11 +14,9 @@
 
     # Xar hil flake bilan ishlashga utilitalar
     utils.url = "github:numtide/flake-utils";
-
-    libnya.url = "github:NyanSystems/nya";
   };
 
-  outputs = { self, nixpkgs, libnya, ... }@inputs: inputs.utils.lib.eachSystem [
+  outputs = { self, nixpkgs, ... }@inputs: inputs.utils.lib.eachSystem [
     # O'zingiz qo'llab quvvatlash xohlagan arxitekturalar shu yerga qo'shing.
     # Esda tuting: Hamma paketlarniyam stabil va rasmiy nixpkgs har xil
     # arxitekturalarda qo'llab quvvatlamaydi.
@@ -29,12 +27,7 @@
 
       # Agar nixpkgs dagi biron rasmiy paket o'zgartirish kerak
       # bo'lsa, shu yerga overlay shaklda qo'shing o'zgarishlarni.
-      overlays = [
-        (self: super: {
-          # Add libnya as a package
-          nyan = super.callPackage libnya { };
-        })
-      ];
+      overlays = [];
 
       # Agar sizga biron tekin bo'lmagan dastur kerak bo'lsa (masalan,
       # cuda), commentdan olib tashlang.
@@ -65,7 +58,6 @@
         # Build va rantaym paytgi kutubxonalar
         curl  # Tarmoq bilan ishlash uchun
         jansson  # JSON bilan ishlash uchun
-        nyan  # Nyan bilan ishlash uchun
       ];
 
       # Terminaldagi muhitni ishlash uchun kerakli qismlar sozlash.
