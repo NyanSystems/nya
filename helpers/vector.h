@@ -17,9 +17,7 @@
 
 #include <stdbool.h>
 #include <stddef.h>
-#include <stdint.h>
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
  * We want at least 20 vector element spaces in reserve before having

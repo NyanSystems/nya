@@ -52,7 +52,7 @@
         # gdb
         gnumake
         # valgrind
-        
+
         # Ustida ishlayotgandagi ishlatilgan kutubxonalar
 
         # Build va rantaym paytgi kutubxonalar

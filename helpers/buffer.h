@@ -16,7 +16,6 @@
 #define BUFFER_H
 
 #include <stddef.h>
-#include <stdint.h>
 
 #define BUFFER_REALLOC_AMOUNT 2000
 struct buffer {
