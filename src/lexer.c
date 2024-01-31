@@ -1,6 +1,6 @@
 #include "../helpers/buffer.h"
-#include "compiler.h"
-#include "vector.h"
+#include "../helpers/vector.h"
+#include "../include/compiler.h"
 #include <stdlib.h>
 #include <string.h>
 
