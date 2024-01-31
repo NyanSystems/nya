@@ -25,3 +25,6 @@ all: ${OBJECTS}
 clean:
 	rm ./build/nyagcc
 	rm -rf ${OBJECTS}
+
+format:
+	/usr/bin/find . -regex '.*\.\(c\|h\)' -exec clang-format -style=file -i {} \;
