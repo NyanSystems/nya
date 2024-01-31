@@ -58,5 +58,8 @@ build/*
 test/*
 !test/*.c
 
-# Clangd caches
+# Generated files
+helpers/*
+
+# Clangd caches on Zed
 .cache
