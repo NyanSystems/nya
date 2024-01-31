@@ -57,3 +57,6 @@ build/*
 # Test files directory
 test/*
 !test/*.c
+
+# Clangd caches
+.cache
