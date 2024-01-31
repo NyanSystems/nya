@@ -5,7 +5,7 @@
 #ifndef NYA_COMPILER_H
 #define NYA_COMPILER_H
 
-#include "buffer.h"
+#include "../helpers/buffer.h"
 #include <stdbool.h>
 #include <stdio.h>
 
@@ -89,8 +89,8 @@ struct lex_process {
   struct buffer *parentheses_buffer;
   struct lex_process_functions *function;
 
-  // Lekser tushunmagan maxvfiy ma'lumotlar
-  // Lekin lekser ishlatayotgan inson tushunadi
+  // Lekser tushunmagan maxvfiy ma'lumotlar.
+  // Lekin lekser ishlatayotgan inson tushunadi.
   void *private;
 };
 

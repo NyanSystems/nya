@@ -1,5 +1,5 @@
-#include "compiler.h"
-#include "vector.h"
+#include "../helpers/vector.h"
+#include "../include/compiler.h"
 #include <stdlib.h>
 
 struct lex_process *lex_process_create(struct compile_process *compiler,

@@ -1,10 +1,10 @@
-#include "buffer.h"
+#include "../helpers/buffer.h"
 #include "compiler.h"
 #include "vector.h"
 #include <stdlib.h>
 #include <string.h>
 
-#define LEX_GETC_IF(buffer, c, exp)                                             \
+#define LEX_GETC_IF(buffer, c, exp)                                            \
   for (c = peekc(); exp; c = peekc()) {                                        \
     buffer_write(buffer, c);                                                   \
     nextc();                                                                   \

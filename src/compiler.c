@@ -2,7 +2,7 @@
 // Created by Sokhibjon Orzikulov on 15/01/24.
 //
 
-#include "compiler.h"
+#include "../include/compiler.h"
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
