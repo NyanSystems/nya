@@ -16,6 +16,11 @@ struct pos {
 };
 
 enum {
+  LEXICAL_ANALYSIS_ALL_OK,
+  LEXICAL_ANALYSIS_INPUT_ERROR,
+};
+
+enum {
   TOKEN_TYPE_IDENTIFIER,
   TOKEN_TYPE_KEYWORD,
   TOKEN_TYEP_OPERATOR,
@@ -50,7 +55,7 @@ struct lex_process;
 
 typedef char (*LEX_PROCESS_NEXT_CHAR)(struct lex_process *process);
 typedef char (*LEX_PROCESS_PEEK_CHAR)(struct lex_process *process);
-typedef void (*LEX_PROCESS_PUSH_CHAR)(struct lex_process process, char c);
+typedef void (*LEX_PROCESS_PUSH_CHAR)(struct lex_process *process, char c);
 
 struct lex_process_functions {
   LEX_PROCESS_NEXT_CHAR next_char;
@@ -102,12 +107,15 @@ char compile_process_next_char(struct lex_process *lex_process);
 char compile_process_peek_char(struct lex_process *lex_process);
 void compile_process_push_char(struct lex_process *lex_process, char c);
 
-// Lekser
+// Lekser Protsessini boshqarishga oid
 struct lex_process *lex_process_create(struct compile_process *compiler,
                                        struct lex_process_functions *functions,
                                        void *private);
 void lex_process_free(struct lex_process *process);
 void *lex_process_private(struct lex_process *process);
 struct vector *lex_process_tokens(struct lex_process *process);
+
+// Lekser o'zi
+int lex(struct lex_process *process);
 
 #endif // NYA_COMPILER_H
