@@ -44,6 +44,8 @@ jobs:
     - name: Run
       run: ./result/bin/nya
 
-    - name: Remote run
-      run: |
-        nix run github:NyanSystems/nya
+    # As we are currently working on libraries issues,
+    # we will not try to run this project remotely.
+    # - name: Remote run
+    #   run: |
+    #     nix run github:NyanSystems/nya
