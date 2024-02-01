@@ -2,9 +2,9 @@ name: CMake CI
 
 on:
   push:
-    branches: [ main prelib ]
+    branches: [ main ]
   pull_request:
-    branches: [ main prelib ]
+    branches: [ main ]
 
 jobs:
   cmake-build:
