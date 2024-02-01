@@ -59,7 +59,8 @@ test/*
 !test/*.c
 
 # Generated files
-helpers/*
+# helpers/*
+result
 
 # Editor caches
 .cache
