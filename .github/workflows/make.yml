@@ -2,9 +2,9 @@ name: GNU/Make CI
 
 on:
   push:
-      branches: [ main ]
+      branches: [ main prelib ]
   pull_request:
-      branches: [ main ]
+      branches: [ main prelib ]
     
 jobs:
   make-build:
@@ -20,6 +20,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
+    - name: Fetch libraries
+      run: |
+        ./.github/scripts/get-helpers.sh
+      working-directory: ${{ github.workspace }}
+
+
     - name: Create necessary folders
       run: |
         mkdir -p build/helpers

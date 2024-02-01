@@ -2,9 +2,9 @@ name: CMake CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main prelib ]
   pull_request:
-    branches: [ main ]
+    branches: [ main prelib ]
 
 jobs:
   cmake-build:
@@ -36,12 +36,15 @@ jobs:
           - os: macos-latest
             c_compiler: cl
 
-
-
     steps:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 1
+
+    - name: Fetch libraries
+      run: |
+        ./.github/scripts/get-helpers.sh
+      working-directory: ${{ github.workspace }}
 
     - name: Set reusable strings
       # Turn repeated input strings (such as the build output directory) into step outputs. These step outputs can be used throughout the workflow file.
