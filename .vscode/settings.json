@@ -1,6 +1,0 @@
-{
-    "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix",
-    "files.associations": {
-        "*.h": "c"
-    }
-}

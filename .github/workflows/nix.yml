@@ -2,9 +2,9 @@ name: Nix CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main prelib ]
   pull_request:
-    branches: [ main ]
+    branches: [ main prelib ]
 
 jobs:
   nix-build:
@@ -20,6 +20,12 @@ jobs:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 1
+
+    - name: Fetch libraries
+      run: |
+        ./.github/scripts/get-helpers.sh
+      working-directory: ${{ github.workspace }}
+  
 
     - uses: cachix/install-nix-action@v22
       with:

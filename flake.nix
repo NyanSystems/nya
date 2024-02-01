@@ -64,15 +64,14 @@
 
       # Terminaldagi muhitni ishlash uchun kerakli qismlar sozlash.
       shellHook = let
-        icon = "f121";
+        icon = "(* ^ ω ^)";
       in ''
-        # export PS1="$(echo -e '\u${icon}') {\[$(tput sgr0)\]\[\033[38;5;228m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]} (${name}) \\$ \[$(tput sgr0)\]"
-        export PS1="\[$(tput setaf 1)\]$(echo -e '\u${icon}')\[$(tput setaf 2)\] {\[$(tput setaf 3)\]\w\[$(tput setaf 4)\]} \[$(tput setaf 5)\](${name})\[$(tput setaf 6)\] \\$ -> \[$(tput sgr0)\]"
+        export PS1="\[$(tput setaf 1)\]$(echo -e '${icon}')\[$(tput setaf 2)\] {\[$(tput setaf 3)\]\w\[$(tput setaf 2)\]} \[$(tput setaf 5)\](${name})\[$(tput setaf 6)\] \\$ -> \[$(tput sgr0)\]"
 
         # Let's make some announcements
-        figlet -f slant Nya | lolcat
+        figlet -f slant ${name} | lolcat
         printf "\n"
-        printf "Welcome to Nya's compiler development environment!\n" | lolcat
+        printf "Welcome to ${name}'s compiler development environment!\n" | lolcat
         printf "\n"
 
         # Check if there's "helpers" folder in the current directory, if no - create it
@@ -80,7 +79,7 @@
           printf "Creating helpers folder...\n" | lolcat
           mkdir helpers
 
-          printf "Downloading libnya...\n" | lolcat
+          printf "Downloading lib${name}...\n" | lolcat
           wget https://github.com/NyanSystems/libnya/archive/refs/heads/main.zip
 
           printf "Unzipping libnya...\n" | lolcat
@@ -98,7 +97,7 @@
           printf "Creating build folder...\n" | lolcat
           mkdir -p build/helpers
 
-          printf "Building libnya...\n" | lolcat
+          printf "Building lib${name}...\n" | lolcat
           cd build
           cmake ..
           cmake --build .
